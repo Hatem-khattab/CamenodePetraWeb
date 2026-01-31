@@ -1,0 +1,207 @@
+﻿@using Microsoft.AspNetCore.Identity
+@using CamenoDePetraWeb.Models.Data
+@using CamenoDePetraWeb.Resources
+@using System.Globalization
+@inject SignInManager<IdentityUser> SignInManager
+@model IEnumerable<Review>
+<link href="~/css/site.css" rel="stylesheet" />
+@{
+    ViewData["Title"] = SharedResources.ReviewsTitle;
+}
+<link rel="preload"
+      as="image"
+      href="/images/the-petra-backfround.webp"
+      fetchpriority="high">
+<div class="first-picture">
+    <header class="header">
+        <div class="header-left">
+            <a href="/" class="logo">
+                <img src="~/images/CamenoDePetraLogo.png" alt="the petra">
+            </a>
+        </div>
+        <div class="header-right">
+            <div class="language-dropdown auth-button">
+                <button class="dropbtn">@SharedResources.Language ▼</button>
+                <div class="dropdown-content">
+                    <a asp-controller="Home" asp-action="ChangeLanguage" asp-route-lang="en">
+                        English
+                        <img class="drop-down-image" src="~/images/en.webp" alt="EN" class="flag" loading="lazy">
+                    </a>
+                    <a asp-controller="Home" asp-action="ChangeLanguage" asp-route-lang="fr">
+                        Français
+                        <img class="drop-down-image" src="~/images/fr.webp" alt="FR" class="flag" loading="lazy">
+                    </a>
+                    <a asp-controller="Home" asp-action="ChangeLanguage" asp-route-lang="es">
+                        Español
+                        <img class="drop-down-image" src="~/images/es.webp" alt="ES" class="flag" loading="lazy">
+                    </a>
+                    <a asp-controller="Home" asp-action="ChangeLanguage" asp-route-lang="pt">
+                        Português
+                        <img class="drop-down-image" src="~/images/Flag_of_Portugal_(official).png" alt="PT" loading="lazy">
+                    </a>
+                </div>
+            </div>
+
+            <div class="auth-button">
+                @if (SignInManager.IsSignedIn(User))
+                {
+                    <form asp-controller="Account" asp-action="Logout" method="post">
+                        <button type="submit">@SharedResources.Logout</button>
+                    </form>
+                }
+                else
+                {
+                    <a class="nav-link" asp-controller="Account" asp-action="Login">@SharedResources.Login</a>
+                }
+            </div>
+        </div>
+    </header>
+
+    <div class="about-us">
+        <p></p>
+    </div>
+</div>
+
+<div class="section-divider"></div>
+
+<div class="image-carousel-wrapper">
+    <div class="image-carousel">
+
+        <img src="~/images/awadi.jpg"
+             alt="Wadi Rum desert landscape in southern Jordan"
+             data-alt-fr="Paysage désertique du Wadi Rum dans le sud de la Jordanie"
+             data-alt-pt="Paisagem desértica de Wadi Rum no sul da Jordânia"
+             loading="lazy">
+
+        <img src="~/images/mauntainnebo.jpeg"
+             alt="Mount Nebo viewpoint overlooking the Jordan Valley"
+             data-alt-fr="Point de vue du mont Nébo sur la vallée du Jourdain"
+             data-alt-pt="Vista do Monte Nebo com vista para o Vale do Jordão"
+             loading="lazy">
+
+        <!-- أهم صورة (LCP) -->
+        <img src="~/images/the_petr.jpg"
+             alt="The Treasury Al Khazneh in the ancient city of Petra Jordan"
+             data-alt-fr="Le Trésor Al Khazneh dans l'ancienne cité de Pétra en Jordanie"
+             data-alt-pt="O Tesouro Al Khazneh na antiga cidade de Petra, Jordânia"
+             loading="eager"
+             fetchpriority="high"
+             decoding="async">
+
+        <img src="~/images/wadi-rum-sunset.jpg"
+             alt="Sunset over the desert rocks of Wadi Rum"
+             data-alt-fr="Coucher de soleil sur les rochers du désert de Wadi Rum"
+             data-alt-pt="Pôr do sol sobre as rochas do deserto de Wadi Rum"
+             loading="lazy">
+
+        <img src="~/images/slide5.jpg"
+             alt="Ancient stone architecture carved in Petra"
+             data-alt-fr="Architecture ancienne sculptée dans la pierre à Pétra"
+             data-alt-pt="Arquitetura antiga esculpida na pedra em Petra"
+             loading="lazy">
+
+        <img src="~/images/wadirum2.jpeg"
+             alt="Rock formations and sand dunes in Wadi Rum"
+             data-alt-fr="Formations rocheuses et dunes de sable du Wadi Rum"
+             data-alt-pt="Formações rochosas e dunas de areia em Wadi Rum"
+             loading="lazy">
+
+        <img src="~/images/wadirum3.jpeg"
+             alt="Wide desert view of Wadi Rum Jordan"
+             data-alt-fr="Vue panoramique du désert de Wadi Rum en Jordanie"
+             data-alt-pt="Vista ampla do deserto de Wadi Rum na Jordânia"
+             loading="lazy">
+
+        <img src="~/images/wadirum4.jpeg"
+             alt="Wadi Rum canyon and sandstone mountains"
+             data-alt-fr="Canyon et montagnes de grès du Wadi Rum"
+             data-alt-pt="Cânion e montanhas de arenito em Wadi Rum"
+             loading="lazy">
+
+        <img src="~/images/wadirum5.jpeg"
+             alt="Desert adventure scenery in Wadi Rum"
+             data-alt-fr="Paysage d’aventure dans le désert du Wadi Rum"
+             data-alt-pt="Cenário de aventura no deserto de Wadi Rum"
+             loading="lazy">
+
+        <img src="~/images/wadirum6.jpeg"
+             alt="Wadi Rum desert trail surrounded by rock formations"
+             data-alt-fr="Sentier désertique entouré de formations rocheuses au Wadi Rum"
+             data-alt-pt="Trilha desértica cercada por formações rochosas em Wadi Rum"
+             loading="lazy">
+
+        <img src="~/images/wadirum7.jpeg"
+             alt="Golden desert sands of Wadi Rum at daylight"
+             data-alt-fr="Sables dorés du désert de Wadi Rum en plein jour"
+             data-alt-pt="Areias douradas do deserto de Wadi Rum durante o dia"
+             loading="lazy">
+
+        <img src="~/images/petra2.jpeg"
+             alt="Ancient carvings and stone facades in Petra"
+             data-alt-fr="Gravures anciennes et façades en pierre à Pétra"
+             data-alt-pt="Esculturas antigas e fachadas de pedra em Petra"
+             loading="lazy">
+
+        <img src="~/images/petra5.jpeg"
+             alt="Petra archaeological site carved in rose-red stone"
+             data-alt-fr="Site archéologique de Pétra sculpté dans la pierre rose"
+             data-alt-pt="Sítio arqueológico de Petra esculpido na pedra rosada"
+             loading="lazy">
+
+    </div>
+
+</div>
+
+<div class="reviews-section">
+    <div class="text-center mb-5">
+        <h6 class="text-uppercase text-muted mb-2">@SharedResources.Testimonial</h6>
+        <h2 class="display-5 fw-bold mb-4">@SharedResources.WhatOurClientSays</h2>
+        <p class="lead text-muted mx-auto" style="max-width: 700px;">@SharedResources.ReviewsDescription</p>
+    </div>
+
+    @if (!Model.Any())
+    {
+        <div class="text-center mt-5">
+            <p class="text-muted fs-5">@SharedResources.LearnAboutAspNetCore</p>
+        </div>
+    }
+    else
+    {
+        <div class="reviews-carousel-container">
+            <div class="reviews-carousel-wrapper">
+                <div class="reviews-carousel" id="reviewsCarousel">
+                    @foreach (var review in Model)
+                    {
+                        <div class="review-card">
+                            <div class="star-rating mb-3">
+                                @for (int i = 0; i < 5; i++)
+                                {
+                                    <span class="star @(i < review.Rating ? "text-warning" : "text-muted")">★</span>
+                                }
+                            </div>
+                            <blockquote class="review-text mb-4">
+                                <p class="fs-6 text-muted">@review.Message</p>
+                            </blockquote>
+                            <div class="reviewer-info">
+                                <strong class="fs-5 d-block mb-1">@review.Name</strong>
+                                <small class="text-muted">@review.CreatedAt.ToString("dd/MM/yyyy", CultureInfo.CurrentCulture)</small>
+                            </div>
+                            @if (SignInManager.IsSignedIn(User) && User.IsInRole("SuperAdmin"))
+                            {
+                                <form asp-action="Delete" asp-route-id="@review.Id" method="post" class="mt-3">
+                                    <button type="submit" class="btn btn-sm btn-danger">@SharedResources.DeleteReview</button>
+                                </form>
+                            }
+                        </div>
+                    }
+                </div>
+            </div>
+            <button class="carousel-control prev" onclick="moveCarousel(-1)"><span>❮</span></button>
+            <button class="carousel-control next" onclick="moveCarousel(1)"><span>❯</span></button>
+            <div class="carousel-dots" id="carouselDots"></div>
+        </div>
+    }
+</div>
+
+@await Html.PartialAsync("_CreateReview", new Review { Name = "", Email = "", Message = "", Rating = 0 })
+

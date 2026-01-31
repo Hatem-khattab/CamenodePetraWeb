@@ -1,0 +1,914 @@
+﻿html {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    overflow-x: hidden;
+    position: relative;
+}
+main {
+    flex: 1;
+}
+body {
+    display: flex;
+    flex-direction: column;
+    overflow-x: hidden;
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    font-size: 14px;
+    background-color: white;
+    min-height: 100vh;
+    background-size: cover;
+    background-position: center;
+}
+.btn:focus, .btn:active:focus, .btn-link.nav-link:focus, .form-control:focus, .form-check-input:focus {
+  box-shadow: 0 0 0 0.1rem white, 0 0 0 0.25rem #258cfb;
+}
+
+
+
+
+.first-picture {
+    min-height: 100vh; /* أفضل من height */
+    background-image: url('../images/the-petra-backfround.webp');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+.about-us {
+    color: snow;
+    width: 600px;
+    height: 100px;
+    margin: auto;
+    
+}
+    .about-us p {
+        transition: opacity 0.5s ease-in-out;
+        opacity: 1;
+        font-size: 1.98rem;
+        text-align: center;
+        color: #fff; /* أو أي لون يناسب الخلفية */
+        background-color: rgba(0, 0, 0, 0.5); /* خلفية نصف شفافة سوداء */
+        border-radius: 12px; /* optional لتجميل الاطراف */
+    }
+
+.Cameno-logo {
+    width: 60px;
+    height: 60px;
+}
+.image-carousel-wrapper {
+    overflow: hidden;
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.image-carousel {
+    display: flex;
+}
+
+    .image-carousel img {
+        height: 380px;
+        width: calc(33.333% - 43.33px);
+        margin-right: 20px;
+        object-fit: cover;
+        border-radius: 10px;
+    }
+.section-divider {
+    height: 20px;
+    background: linear-gradient( to bottom, rgba(0,0,0,0.05), rgba(255,255,255,1) );
+}
+
+
+
+.reviews-div {
+    margin-top: 50px;
+}
+.petra-bg {
+    min-height: 100vh;
+    background-image: url('/images/the_petr.jpeg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    position: relative;
+}
+    .petra-bg::before {
+        content: "";
+        position: absolute;
+        inset: 0;
+        background: rgba(0, 0, 0, 0.45);
+        z-index: 0;
+    }
+
+    .petra-bg > * {
+        position: relative;
+        z-index: 1;
+    }
+.footer{
+    width:100%;
+    height:50px;
+    margin:auto;
+    bottom:150px;
+    display:flex;
+    justify-content:center;
+    flex-direction:row;
+    text-align:center;
+   
+}
+.footer-a {
+    position:absolute;
+    width: 100%;
+    height: 50px;
+    margin: auto;
+    bottom: 20px;
+    display: flex;
+    justify-content: center;
+    flex-direction: row;
+    text-align: center;
+    margin-bottom:12px;
+    gap:50px;
+}
+footer-a .social-icons {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+   
+}
+
+    footer-a .social-icons a svg {
+        transition: transform 0.3s;
+    }
+
+    footer-a .social-icons a:hover svg {
+        transform: scale(1.2);
+    }
+.header {
+    opacity: 100%;
+    display: flex;
+    justify-content: space-between; /* الشمال واليمين */
+    align-items: center;
+    padding: 20px 90px;
+    background-color: unset;
+    font-family: Arial, sans-serif;
+}
+
+/* اللوجو */
+.header-left .logo img {
+    height: 100px;
+    width: 100px;
+}
+
+/* الجانب الأيمن */
+.header-right {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+/* Drop-down للغات */
+.language-dropdown {
+    display:flex;
+    flex-direction:column;
+    gap:50px;
+    position: relative;
+    display: inline-block;
+}
+
+    .language-dropdown .dropbtn {
+        background-color: #007bff;
+        color: white;
+        padding: 6px 12px;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+        cursor: pointer;
+        font-weight: bold;
+        display: flex;
+        align-items: center;
+        gap: 50px;
+    }
+
+        .language-dropdown .dropbtn .flag {
+            width: 20px;
+            height: 14px;
+        }
+.drop-down-image{
+    width:20px;
+    height:20px;
+}
+/* محتوى القائمة المنسدلة */
+.language-dropdown .dropdown-content {
+    display: none;
+    position: absolute;
+    right: 0; /* يظهر تحت الزر على اليمين */
+    background-color: #fff;
+    min-width: 120px;
+    box-shadow: 0px 4px 8px rgba(0,0,0,0.1);
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    z-index: 1000;
+}
+
+        .language-dropdown .dropdown-content a {
+            color: #333;
+            padding: 6px 10px;
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+            gap: 5px;
+        }
+
+            .language-dropdown .dropdown-content a:hover {
+                background-color: #f0f0f0;
+            }
+
+    .language-dropdown:hover .dropdown-content {
+        display: block;
+    }
+
+/* زر تسجيل الدخول/الخروج */
+.auth-button a,
+.auth-button button {
+    text-decoration: none;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    padding: 6px 12px;
+    border-radius: 4px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: background 0.2s;
+}
+
+    .auth-button a:hover,
+    .auth-button button:hover {
+        background-color: #0056b3;
+    }
+.container,
+.container-lg,
+.container-md,
+.container-sm,
+.container-xl,
+.container-xxl {
+    max-width: 100% !important;
+    padding-left: 0 !important;
+    padding-right: 0 !important;
+    margin-left: 0 !important;
+    margin-right: 0 !important;
+}
+/*================================ log in  section ====================================   */
+.auth-container {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #f6f7f9;
+    padding: 20px;
+}
+
+/* Form */
+.auth-form {
+    width: 100%;
+    max-width: 420px;
+    background: #fff;
+    padding: 32px;
+    border-radius: 14px;
+    box-shadow: 0 10px 30px rgba(0,0,0,.08);
+}
+
+/* Title */
+.auth-title {
+    text-align: center;
+    margin-bottom: 24px;
+    font-size: 1.8rem;
+    color: #222;
+}
+.form-group {
+    margin-bottom: 18px;
+}
+
+.form-label {
+    display: block;
+    margin-bottom: 6px;
+    font-size: 0.95rem;
+    color: #333;
+}
+
+.form-input {
+    width: 100%;
+    padding: 12px 14px;
+    border-radius: 8px;
+    border: 1px solid #ccc;
+    font-size: 1rem;
+    transition: border-color 0.2s, box-shadow 0.2s;
+}
+
+    .form-input:focus {
+        outline: none;
+        border-color: #0d6efd;
+        box-shadow: 0 0 0 3px rgba(13,110,253,.15);
+    }
+.form-check {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin-bottom: 22px;
+    font-size: 0.9rem;
+}
+
+    .form-check input {
+        width: 16px;
+        height: 16px;
+        cursor: pointer;
+    }
+.btn-primary {
+    width: 100%;
+    padding: 12px;
+    border-radius: 8px;
+    border: none;
+    background: #0d6efd;
+    color: #fff;
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background 0.2s, transform 0.1s;
+}
+
+    .btn-primary:hover {
+        background: #0b5ed7;
+    }
+
+    .btn-primary:active {
+        transform: scale(0.98);
+    }
+.form-error {
+    display: block;
+    margin-top: 4px;
+    font-size: 0.85rem;
+    color: #d32f2f;
+}
+
+
+/*================================ reviews section ====================================   */
+.reviews-section {
+    margin: 20px 0 10px 0;
+    background-color: #f8f9fa;
+    padding: 0rem 0;
+    font-family: 'Segoe UI', system-ui, sans-serif;
+}
+
+#reviewsCarousel {
+    display: flex;
+    gap: 30px;
+    transition: transform 0.5s ease;
+}
+
+/* Carousel Container */
+.reviews-carousel-container {
+    position: relative;
+    max-width: 1200px;
+    margin: 0 auto;
+    overflow: hidden;
+    padding: 0 50px;
+}
+
+.reviews-carousel-wrapper {
+    overflow: hidden;
+    width: 100%;
+}
+
+.reviews-carousel {
+    display: flex;
+    gap: 30px;
+    transition: transform 0.5s ease-in-out;
+}
+
+.review-card {
+    flex: 0 0 calc(33.333% - 20px); /* 3 cards visible at a time */
+    min-width: calc(33.333% - 20px);
+    background: white;
+    border: none;
+    border-radius: 12px;
+    padding: 30px;
+    transition: transform 0.3s ease;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.08);
+    height: 350px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+    .review-card:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 8px 25px rgba(0,0,0,0.12);
+    }
+
+.star-rating {
+    font-size: 1.5rem;
+    letter-spacing: 2px;
+    text-align: center;
+}
+
+.star {
+    color: #ffc107;
+}
+
+.review-text {
+    font-style: italic;
+    line-height: 1.6;
+    flex-grow: 1;
+    overflow-y: auto;
+    padding-right: 5px;
+}
+
+    .review-text::-webkit-scrollbar {
+        width: 4px;
+    }
+
+    .review-text::-webkit-scrollbar-track {
+        background: #f1f1f1;
+        border-radius: 4px;
+    }
+
+    .review-text::-webkit-scrollbar-thumb {
+        background: #888;
+        border-radius: 4px;
+    }
+
+        .review-text::-webkit-scrollbar-thumb:hover {
+            background: #555;
+        }
+
+.reviewer-info {
+    border-top: 1px solid #eaeaea;
+    padding-top: 15px;
+    margin-top: 15px;
+    text-align: center;
+}
+
+/* Carousel Controls */
+.carousel-control {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: white;
+    border: none;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    box-shadow: 0 3px 10px rgba(0,0,0,0.15);
+    z-index: 10;
+    transition: all 0.3s ease;
+    font-size: 20px;
+    color: #333;
+}
+
+    .carousel-control:hover {
+        background: #007bff;
+        color: white;
+        transform: translateY(-50%) scale(1.1);
+    }
+
+    .carousel-control.prev {
+        left: 0;
+    }
+
+    .carousel-control.next {
+        right: 0;
+    }
+
+    .carousel-control span {
+        font-size: 18px;
+    }
+
+/* Dots Indicator */
+.carousel-dots {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    margin-top: 30px;
+}
+
+.dot {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background: #ddd;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+    .dot.active {
+        background: #007bff;
+        transform: scale(1.2);
+    }
+
+    .dot:hover {
+        background: #0056b3;
+    }
+
+/* Responsive Design */
+@media (max-width: 992px) {
+    .review-card {
+        flex: 0 0 calc(50% - 15px); /* 2 cards on tablets */
+        min-width: calc(50% - 15px);
+    }
+
+    .reviews-carousel-container {
+        padding: 0 40px;
+    }
+}
+
+@media (max-width: 768px) {
+    .review-card {
+        flex: 0 0 calc(100% - 10px); /* 1 card on mobile */
+        min-width: calc(100% - 10px);
+        height: auto;
+        min-height: 300px;
+    }
+
+    .reviews-carousel-container {
+        padding: 0 30px;
+    }
+
+    .reviews-section {
+        padding: 3rem 1rem;
+    }
+
+    .carousel-control {
+        width: 40px;
+        height: 40px;
+        font-size: 16px;
+    }
+}
+/* ========================== create review section ================================*/
+
+/* Main container styling */
+.review-form-section {
+    width:100%;
+    background-color: #f8f9fa;
+    padding: 5rem 0;
+    min-height: 100vh;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, sans-serif;
+}
+
+.review-form-container {
+    max-width: 600px;
+    max-height: 1000px;
+    margin: 0 auto;
+    background: white;
+    border-radius: 16px;
+    padding: 3rem;
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.08);
+}
+
+/* Header styling */
+.review-form-header h1 {
+    color: #1a1a1a;
+    font-weight: 700;
+    font-size: 2.5rem;
+    line-height: 1.2;
+}
+
+.review-form-header p {
+    font-size: 1.1rem;
+    color: #666;
+}
+
+/* Section titles */
+.form-section-title {
+    color: #2d3436;
+    font-weight: 600;
+    font-size: 1.4rem;
+}
+
+/* Star rating system */
+.star-rating-input {
+    text-align: center;
+}
+
+.stars {
+    display: flex;
+    justify-content: center;
+    gap: 10px; /* المسافة بين النجوم */
+    margin-bottom: 8px;
+}
+    .stars .star {
+        font-size: 3rem; /* حجم النجمة */
+        cursor: pointer;
+        color: #ddd; /* اللون الافتراضي */
+        transition: color 0.2s;
+    }
+    .stars input[type="radio"] {
+        display: none;
+    }
+
+.star-label {
+    font-size: 3rem;
+    color: #ddd;
+    cursor: pointer;
+    transition: color 0.2s ease, transform 0.2s ease;
+    padding: 0 5px;
+}
+
+    .star-label:hover,
+    .star-label:hover ~ .star-label {
+        color: #ffc107 !important;
+    }
+
+.stars input[type="radio"]:checked ~ .star-label {
+    color: #ddd;
+}
+
+.stars input[type="radio"]:checked + .star-label,
+.stars input[type="radio"]:checked + .star-label ~ .star-label {
+    color: #ffc107;
+}
+
+.stars input[type="radio"]:hover + .star-label {
+    transform: scale(1.1);
+}
+
+.star-labels {
+    display: flex;
+    justify-content: space-between;
+    max-width: 400px;
+    margin: 0 auto;
+    font-size: 0.9rem;
+    color: #666;
+    margin-top: 10px;
+}
+
+    .star-labels span {
+        flex: 1;
+        text-align: center;
+    }
+
+/* Form controls */
+.form-label {
+    font-weight: 600;
+    color: #333;
+    margin-bottom: 8px;
+    display: block;
+    font-size: 1rem;
+}
+
+.form-control {
+    border: 2px solid #e0e0e0;
+    border-radius: 8px;
+    padding: 14px 16px;
+    font-size: 1rem;
+    transition: all 0.3s ease;
+    background-color: #fff;
+}
+
+    .form-control:focus {
+        border-color: #007bff;
+        box-shadow: 0 0 0 3px rgba(0, 123, 255, 0.1);
+        outline: none;
+    }
+
+    .form-control::placeholder {
+        color: #aaa;
+    }
+
+.review-textarea {
+    resize: vertical;
+    min-height: 120px;
+    font-size: 1rem;
+    line-height: 1.5;
+}
+
+/* Divider */
+hr {
+    border: none;
+    height: 1px;
+    background-color: #e8e8e8;
+    margin: 2.5rem 0;
+}
+
+/* Submit button */
+.submit-btn {
+    background: linear-gradient(135deg, #007bff, #0056b3);
+    border: none;
+    border-radius: 10px;
+    padding: 16px 40px;
+    font-size: 1.1rem;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 15px rgba(0, 123, 255, 0.2);
+}
+
+    .submit-btn:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 6px 20px rgba(0, 123, 255, 0.3);
+        background: linear-gradient(135deg, #0069d9, #004a9e);
+    }
+
+    .submit-btn:active {
+        transform: translateY(0);
+    }
+
+/* Form note */
+.form-note {
+    max-width: 600px;
+    margin: 0 auto;
+    line-height: 1.6;
+}
+
+    .form-note p {
+        color: #666;
+        font-size: 0.9rem;
+    }
+
+/* Error messages */
+.text-danger {
+    font-size: 0.85rem;
+    margin-top: 5px;
+    display: block;
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+    .review-form-section {
+        padding: 2rem 1rem;
+    }
+
+    .review-form-container {
+        padding: 2rem;
+        border-radius: 12px;
+    }
+
+    .review-form-header h1 {
+        font-size: 2rem;
+    }
+
+    .star-label {
+        font-size: 2.5rem;
+    }
+
+    .star-labels {
+        font-size: 0.8rem;
+    }
+
+    .submit-btn {
+        width: 100%;
+        padding: 14px 20px;
+    }
+}
+
+@media (max-width: 576px) {
+    .review-form-container {
+        padding: 1.5rem;
+    }
+
+    .review-form-header h1 {
+        font-size: 18px;
+    }
+
+    .star-label {
+        font-size: 2rem;
+    }
+
+    .star-labels {
+        display: none; /* Hide labels on very small screens */
+    }
+
+    .row {
+        flex-direction: column;
+    }
+
+    .col-md-6 {
+        width: 100%;
+    }
+}
+/*======================================= mobile query =================================== */
+@media (max-width: 767px) {
+
+    .review-form-header h1 {
+        font-size: 18px;
+    }
+    .header {
+        padding: 35px 20px;
+
+    }
+    .form-label {
+        text-align: center;
+        font-size: 18px;
+    }
+    .form-section-title {
+        font-size: 16px;
+        text-align: center;
+    }
+    .review-form-header p {
+        font-size: 14px;
+    }
+    .header-left .logo img {
+        height: 60px;
+        width: 60px;
+    }
+    .header-right {
+        gap: 6px;
+        flex-direction: row;
+        align-items: flex-end;
+    }
+    .first-picture {
+        width: 100%;
+        height: 47vh;
+        min-height: 42vh;
+    }
+    .dropbtn {
+        height: 30px;
+        width: 99px;
+    }
+    .language-dropdown .dropbtn {
+        height: 29px;
+        width: 79px;
+        padding: 2px 4px;
+        gap: 10px;
+        font-size: 12px;
+    }
+
+    .auth-button a, .auth-button button {
+        padding: 4px 8px;
+        font-size: 0.9rem;
+    }
+    .about-us p {
+        padding: 0 10px;
+        width: 300px;
+        font-size: 18px;
+    }
+    .about-us {
+        width: 300px;
+        height: 288px;
+        font-size: 0.8rem;
+    }
+    
+    .review-form-container {
+        margin-bottom: 58px;
+        flex-direction: column;
+        display: flex;
+        /* gap: 0px; */
+        max-width: 91%;
+        padding: 1.5rem;
+    }
+    
+    .submit-btn {
+        width: 100%;
+    }
+    .image-carousel img {
+        width: 180px;
+        height: 251px;
+        margin-right: 15px;
+        object-fit: cover;
+        border-radius: 10px;
+    }
+    .review-card {
+        flex: 0 0 100%;
+        min-width: 100%;
+    }
+    .reviews-carousel-container {
+        padding: 0;
+    }
+
+    .reviews-carousel {
+        gap: 10px;
+    }
+
+    .review-card {
+        flex: 0 0 calc(50% - 5px);
+        min-width: calc(50% - 5px);
+    }
+    .auth-form {
+        padding: 24px 20px;
+    }
+
+    .auth-title {
+        font-size: 1.5rem;
+    }
+
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

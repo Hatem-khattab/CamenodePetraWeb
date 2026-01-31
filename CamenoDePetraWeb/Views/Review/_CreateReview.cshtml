@@ -1,0 +1,101 @@
+﻿@using Microsoft.Extensions.Localization
+@using CamenoDePetraWeb.Resources
+@model CamenoDePetraWeb.Models.Data.Review
+@inject IStringLocalizer<SharedResources> Localizer
+
+<div class="review-form-section">
+    <div class="review-form-container">
+        <div class="review-form-header text-center mb-5">
+            <h1 class="display-4 fw-bold mb-3">
+                @Localizer["LeaveReviewTitle"]
+            </h1>
+            <p class="text-muted">
+                @Localizer["LeaveReviewSubtitle"]
+            </p>
+
+        </div>
+
+        <div asp-validation-summary="ModelOnly" class="alert alert-danger mb-4" role="alert"></div>
+
+        <form asp-controller="Review"
+              asp-action="Create"
+              asp-route-language="@CultureInfo.CurrentCulture.TwoLetterISOLanguageName"
+              method="post">
+            @Html.AntiForgeryToken()
+
+            <!-- Hidden input for rating -->
+            <input type="hidden" asp-for="Rating" id="ratingValue" value="0" />
+
+            <div class="form-section mb-5">
+                <h3 class="form-section-title mb-4">
+                    @Localizer["RatingQuestion"]
+                </h3>
+
+                <!-- Stars -->
+                <div class="star-rating-input mb-4">
+                    <div class="stars">
+                        <span class="star" data-value="1">★</span>
+                        <span class="star" data-value="2">★</span>
+                        <span class="star" data-value="3">★</span>
+                        <span class="star" data-value="4">★</span>
+                        <span class="star" data-value="5">★</span>
+                    </div>
+
+                    <div class="star-labels">
+                        <span>@Localizer["RatingPoor"]</span>
+                        <span>@Localizer["RatingFair"]</span>
+                        <span>@Localizer["RatingGood"]</span>
+                        <span>@Localizer["RatingVeryGood"]</span>
+                        <span>@Localizer["RatingExcellent"]</span>
+                    </div>
+
+                    <span asp-validation-for="Rating" id="ratingError" class="text-danger"></span>
+                </div>
+
+                <!-- Message -->
+                <div class="mb-4">
+                    <label class="form-label">
+                        @Localizer["YourReview"] *
+                    </label>
+                    <textarea asp-for="Message"
+                              class="form-control review-textarea"
+                              rows="5"
+                              placeholder="@Localizer["ReviewPlaceholder"]"
+                              required></textarea>
+                    <span asp-validation-for="Message" class="text-danger"></span>
+                </div>
+            </div>
+
+            <!-- Personal Info -->
+            <div class="form-section">
+                <div class="row">
+                    <div class="col-md-6 mb-4">
+                        <label class="form-label">
+                            @Localizer["FirstName"] *
+                        </label>
+                        <input asp-for="Name" class="form-control" placeholder="@Localizer["FirstNamePlaceholder"]" required autocomplete="name" />
+                        <span asp-validation-for="Name" class="text-danger"></span>
+                    </div>
+                    <div class="col-md-6 mb-4">
+                        <label class="form-label">
+                            @Localizer["EmailAddress"] *
+                        </label>
+                        <input asp-for="Email"
+                               type="email"
+                               class="form-control"
+                               placeholder="@Localizer["EmailPlaceholder"]"
+                               required autocomplete="ُEmail" />
+                        <span asp-validation-for="Email" class="text-danger"></span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="text-center mt-5">
+                <button type="submit" class="btn btn-primary btn-lg submit-btn">
+                    @Localizer["SubmitReview"]
+                </button>
+
+            </div>
+        </form>
+    </div>
+</div>
